@@ -45,7 +45,7 @@ const defaultConfig = {
   mainTemplate: true,
 };
 
-const DEFAULT_ASSET_NAME = 'runtime-hooks-order.txt'
+const DEFAULT_ASSET_NAME = "runtime-hooks-order.txt";
 
 class LogRuntimeHooksOrderPlugin {
   constructor(userConfig = {}, version = 4) {
@@ -86,6 +86,7 @@ class LogRuntimeHooksOrderPlugin {
 
       const isAsync = fn.indexOf("Async") > -1;
       const isWaterfall = fn.indexOf("Waterfall") > -1;
+      const isBail = fn.indexOf("Bail") > -1;
 
       try {
         if (isAsync) {
@@ -93,12 +94,17 @@ class LogRuntimeHooksOrderPlugin {
             const len = arguments.length;
             const callback = arguments[len - 1];
             const result = Array.from(arguments[(0, len - 1)]);
-            if (result && isWaterfall && callback) {
+            const validCallback = callback && typeof callback === "function";
+            log(`${owner}.hooks.${hookName}`);
+            if (isBail && validCallback) {
+              callback();
+              return;
+            }
+            if (result && isWaterfall && validCallback) {
               callback(null, ...result);
               return;
             }
-            if (callback && typeof callback === "function") {
-              log(`${owner}.hooks.${hookName}`);
+            if (validCallback) {
               callback(...result);
             }
           });
@@ -112,7 +118,7 @@ class LogRuntimeHooksOrderPlugin {
           });
         }
       } catch (e) {
-        log(`${owner}.hooks.${hookName}` + chalk.red(" caught error"));
+        log(`${owner}.hooks.${hookName} caught error`);
       }
     }
   }

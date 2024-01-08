@@ -12,12 +12,12 @@ compiler.hooks.contextModuleFactory
 compiler.hooks.beforeCompile
 compiler.hooks.compile
 compiler.hooks.thisCompilation
-mainTemplate.hooks.modules[31m caught error[39m
-mainTemplate.hooks.moduleObj[31m caught error[39m
-mainTemplate.hooks.beforeStartup[31m caught error[39m
-mainTemplate.hooks.startup[31m caught error[39m
-mainTemplate.hooks.afterStartup[31m caught error[39m
-mainTemplate.hooks.hotBootstrap[31m caught error[39m
+mainTemplate.hooks.modules caught error
+mainTemplate.hooks.moduleObj caught error
+mainTemplate.hooks.beforeStartup caught error
+mainTemplate.hooks.startup caught error
+mainTemplate.hooks.afterStartup caught error
+mainTemplate.hooks.hotBootstrap caught error
 compiler.hooks.compilation
 compiler.hooks.make
 compilation.hooks.addEntry
