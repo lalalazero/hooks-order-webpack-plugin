@@ -2,11 +2,11 @@ const webpack = require("webpack");
 const path = require("path");
 const fs = require("fs");
 const Plugin = require("log-runtime-hooks-order-webpack-plugin");
-const { config: pluginConfig } = require("log-runtime-hooks-order-webpack-plugin");
+const {
+  config: pluginConfig,
+} = require("log-runtime-hooks-order-webpack-plugin");
 
-const context = path.join(__dirname, "..", "fixture/js-node");
-const config = require(context + "/webpack.config.js");
-
+const context = path.join(__dirname, "src");
 
 const testCases = Object.keys(pluginConfig).reduce(
   (acc, cur) => ({
@@ -24,21 +24,27 @@ testCases.all = {
   plugins: [new Plugin({ silent: true })],
 };
 
+function cleanupSrc() {
+  try {
+    fs.rmdirSync(context);
+  } catch (e) {}
+}
+
+function copyFixture() {
+  try {
+    const src = path.join(__dirname, "..", "fixture/js-node");
+    fs.cpSync(src, context, { recursive: true });
+  } catch (e) {}
+}
+
 describe("webpack 4", () => {
   beforeAll(() => {
-    try {
-      console.log("remove dist directory...");
-      fs.rmdirSync(path.join(context, "dist"));
-    } catch (e) {}
-
-    // try {
-    //   const src = path.join(__dirname, "..", "fixture/js-node");
-    //   const dest = __dirname
-    //   fs.cpSync(src, dest, { recursive: true });
-    // } catch (e) {}
+    // cleanupSrc();
+    copyFixture();
   });
   Object.entries(testCases).forEach(([name, caseConfig]) => {
     it(`${name}`, (done) => {
+      const config = require(context + "/webpack.config.js");
       const compiler = webpack({
         context,
         ...config,
