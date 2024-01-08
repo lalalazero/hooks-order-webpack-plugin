@@ -1,41 +1,40 @@
 const chalk = require("chalk");
 
-const logs = []
-
 class Logger {
   constructor(silent) {
+    this.silent = silent;
+    this.rawLogs = [];
+  }
+  getLogger(owner) {
+    const colorMap = {
+      compiler: "red",
+      compilation: "yellow",
+      normalModuleFactory: "blue",
+      contextModuleFactory: "yellow",
+      "normalModuleFactory.createParser": "green",
+      "normalModuleFactory.parser": "green",
+      mainTemplate: "red",
+      chunkTemplate: "green",
+      moduleTemplate: "blue",
+    };
+
+    return (...text) => {
+      let str = "";
+      for (let i of text) {
+        str += text;
+      }
+      this.rawLogs.push(str);
+      if (this.silent) {
+        return;
+      }
+      console.log(chalk[colorMap[owner]](...text));
+    };
+  }
+  getRawLogs() {
+    return this.rawLogs.join("\n");
   }
 }
 
-function getLogger(owner) {
-  const colorMap = {
-    compiler: "red",
-    compilation: "yellow",
-    normalModuleFactory: "blue",
-    contextModuleFactory: "yellow",
-    "normalModuleFactory.createParser": "green",
-    "normalModuleFactory.parser": "green",
-    mainTemplate: "red",
-    chunkTemplate: "green",
-    moduleTemplate: "blue",
-  };
-
-  return function (...text) {
-    let str = ''
-    for(let i of text) {
-      str += text
-    }
-    logs.push(str)
-    console.log(chalk[colorMap[owner]](...text));
-  };
-}
-
-function getLogs() {
-  return logs.join('\n')
-}
-
-
 module.exports = {
-  getLogger,
-  getLogs,
+  Logger,
 };

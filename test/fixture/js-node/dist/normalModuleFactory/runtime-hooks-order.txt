@@ -1,0 +1,8 @@
+normalModuleFactory.hooks.factory
+normalModuleFactory.hooks.resolver
+normalModuleFactory.hooks.createModule
+normalModuleFactory.hooks.module
+normalModuleFactory.hooks.factory
+normalModuleFactory.hooks.resolver
+normalModuleFactory.hooks.createModule
+normalModuleFactory.hooks.module

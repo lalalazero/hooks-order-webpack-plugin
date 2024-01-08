@@ -5,6 +5,7 @@
   "main": "index.js",
   "module": "commonjs",
   "scripts": {
+    "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand  --testMatch \"<rootDir>/test/**/*/test.js\"",
     "test": "jest --testMatch \"<rootDir>/test/**/*/test.js\""
   },
   "keywords": [],
