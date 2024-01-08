@@ -1,6 +1,8 @@
 normalModuleFactory.hooks.beforeResolve
 normalModuleFactory.hooks.factory
 normalModuleFactory.hooks.resolver
+normalModuleFactory.createParser.javascript/auto
+normalModuleFactory.parser.javascript/auto
 normalModuleFactory.hooks.afterResolve
 normalModuleFactory.hooks.createModule
 normalModuleFactory.hooks.module

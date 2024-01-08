@@ -1,37 +1,6 @@
-const { Logger } = require("./helper");
-const chalk = require("chalk");
+const { Logger, HOOK_MAP_NAMES } = require("./helper");
 
 const PLUGIN_NAME = "LogRuntimeHooksOrderPlugin";
-// const HooksMap = {};
-
-// function tapHookMap(hookMapKeys, hookMap) {
-//   let len = hookMapKeys.length;
-//   const keyNames = hookMapKeys.slice(0, len);
-//   function digHooks(mapKeys, i, map = {}) {
-//     let key = mapKeys[i];
-
-//     let value = map[key];
-//     if (Array.isArray(value)) {
-//       return value;
-//     }
-
-//     if (i >= len) {
-//       return [];
-//     }
-//     return digHooks(mapKeys, i + 1, map[key]);
-//   }
-
-//   let hooks = digHooks(hookMapKeys, 0, HooksMap);
-//   for (let hookName of hooks) {
-//     const hook = hookMap.for(hookName);
-//     const prefix = keyNames.join(".");
-//     const fullname = `${prefix}.${hookName}`;
-//     const log = getLogger(prefix);
-//     hook.tap(PLUGIN_NAME, () => {
-//       log(fullname);
-//     });
-//   }
-// }
 
 const defaultConfig = {
   compiler: true,
@@ -46,6 +15,24 @@ const defaultConfig = {
 };
 
 const DEFAULT_ASSET_NAME = "runtime-hooks-order.txt";
+
+const parseHookName = (hook) => {
+  const name = hook.constructor.name;
+
+  const isBail = name.indexOf("Bail") > -1;
+  const isSync = name.indexOf("Sync") > -1;
+  const isAsync = name.indexOf("Async") > -1;
+  const isWaterfall = name.indexOf("Waterfall") > -1;
+  const isHookMap = name.indexOf("HookMap") > -1;
+
+  return {
+    isBail,
+    isSync,
+    isAsync,
+    isWaterfall,
+    isHookMap,
+  };
+};
 
 class LogRuntimeHooksOrderPlugin {
   constructor(userConfig = {}, version = 4) {
@@ -66,6 +53,30 @@ class LogRuntimeHooksOrderPlugin {
       this.config = userConfig;
     }
   }
+  hookIntoMap(hookMap, hookMapName) {
+    const hookNames = HOOK_MAP_NAMES[hookMapName] || [];
+
+    hookNames.forEach((hookName) => {
+      const hook = hookMap.for(hookName);
+
+      this.hookIntoMapHook(hook, hookName, hookMapName);
+    });
+  }
+  hookIntoMapHook(hook, hookName, caller) {
+    const log = this.logger.getLogger(caller);
+    const { isAsync, isWaterfall } = parseHookName(hook);
+    if (isAsync) {
+      throw new Error("todo async hookmap");
+    }
+    hook.tap(PLUGIN_NAME, (...result) => {
+      const text = `${caller}.${hookName}`;
+      log(text);
+
+      if (isWaterfall) {
+        return result && result[0];
+      }
+    });
+  }
   hookInto(target, owner) {
     if (!target || !target.hooks) {
       console.error(`cannot hook into ${owner}`);
@@ -77,18 +88,13 @@ class LogRuntimeHooksOrderPlugin {
 
     for (let hookName of hookNames) {
       const hook = hooks[hookName];
-
-      const fn = hook.constructor.name;
-      const isHookMap = fn.indexOf("HookMap") > -1;
-      if (isHookMap) {
-        return;
-      }
-
-      const isAsync = fn.indexOf("Async") > -1;
-      const isWaterfall = fn.indexOf("Waterfall") > -1;
-      const isBail = fn.indexOf("Bail") > -1;
+      const { isAsync, isWaterfall, isBail, isHookMap } = parseHookName(hook);
 
       try {
+        if (isHookMap) {
+          this.hookIntoMap(hook, `${owner}.${hookName}`);
+          continue;
+        }
         if (isAsync) {
           hook.tapAsync(PLUGIN_NAME, function () {
             const len = arguments.length;
