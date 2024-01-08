@@ -42,7 +42,7 @@ beforeAll(() => {
   copyFixture();
 });
 
-describe("webpack 4.0.0-alpha.0", () => {
+describe("webpack 5 latest", () => {
   Object.entries(testCases).forEach(([name, caseConfig]) => {
     it(`${name}`, (done) => {
       const config = require(context + "/webpack.config.js");

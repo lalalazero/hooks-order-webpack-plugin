@@ -1,0 +1,2 @@
+normalModuleFactory.hooks.resolve
+normalModuleFactory.hooks.resolve

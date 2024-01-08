@@ -64,9 +64,13 @@ class LogRuntimeHooksOrderPlugin {
     }
   }
   hookInto(target, owner) {
-    const log = this.logger.getLogger(owner);
+    if (!target || !target.hooks) {
+      console.error(`cannot hook into ${owner}`);
+      return;
+    }
     const hooks = target.hooks;
     const hookNames = Object.keys(hooks);
+    const log = this.logger.getLogger(owner);
 
     for (let hookName of hookNames) {
       const hook = hooks[hookName];
@@ -163,14 +167,16 @@ class LogRuntimeHooksOrderPlugin {
     compiler.hooks.compilation.tap(PLUGIN_NAME, (compilation) => {
       compilation.hooks.additionalAssets.tapAsync(PLUGIN_NAME, (callback) => {
         const rawLog = this.logger.getRawLogs();
-        compilation.assets["runtime-hooks-order.txt"] = {
-          source: function () {
-            return rawLog;
-          },
-          size: function () {
-            return 2345;
-          },
-        };
+        if (rawLog) {
+          compilation.assets["runtime-hooks-order.txt"] = {
+            source: function () {
+              return rawLog;
+            },
+            size: function () {
+              return 2345;
+            },
+          };
+        }
 
         callback();
       });

@@ -1,0 +1,68 @@
+compiler.hooks.environment
+compiler.hooks.afterEnvironment
+compiler.hooks.entryOption
+compiler.hooks.afterPlugins
+compiler.hooks.afterResolvers
+compiler.hooks.initialize
+compiler.hooks.beforeRun
+compiler.hooks.run
+compiler.hooks.readRecords
+compiler.hooks.normalModuleFactory
+compiler.hooks.contextModuleFactory
+compiler.hooks.beforeCompile
+compiler.hooks.compile
+compiler.hooks.thisCompilation
+mainTemplate.hooks.modules[31m caught error[39m
+mainTemplate.hooks.moduleObj[31m caught error[39m
+mainTemplate.hooks.beforeStartup[31m caught error[39m
+mainTemplate.hooks.startup[31m caught error[39m
+mainTemplate.hooks.afterStartup[31m caught error[39m
+mainTemplate.hooks.hotBootstrap[31m caught error[39m
+compiler.hooks.compilation
+compiler.hooks.make
+compilation.hooks.addEntry
+normalModuleFactory.hooks.resolve
+compilation.hooks.buildModule
+compilation.hooks.succeedModule
+normalModuleFactory.hooks.resolve
+compilation.hooks.buildModule
+compilation.hooks.succeedModule
+compilation.hooks.succeedEntry
+compiler.hooks.finishMake
+compilation.hooks.finishModules
+compilation.hooks.seal
+compilation.hooks.optimizeDependencies
+compilation.hooks.afterOptimizeDependencies
+compilation.hooks.beforeChunks
+compilation.hooks.afterChunks
+compilation.hooks.optimize
+compilation.hooks.optimizeModules
+compilation.hooks.afterOptimizeModules
+compilation.hooks.optimizeChunks
+compilation.hooks.afterOptimizeChunks
+compilation.hooks.optimizeTree
+compilation.hooks.afterOptimizeTree
+compilation.hooks.optimizeChunkModules
+compilation.hooks.afterOptimizeChunkModules
+compilation.hooks.shouldRecord
+compilation.hooks.additionalChunkRuntimeRequirements
+mainTemplate.hooks.bootstrap
+mainTemplate.hooks.localVars
+mainTemplate.hooks.requireExtensions
+mainTemplate.hooks.hashForChunk
+mainTemplate.hooks.require
+chunkTemplate.hooks.hash
+mainTemplate.hooks.hash
+mainTemplate.hooks.bootstrap
+mainTemplate.hooks.localVars
+mainTemplate.hooks.requireExtensions
+mainTemplate.hooks.require
+mainTemplate.hooks.hashForChunk
+mainTemplate.hooks.bootstrap
+mainTemplate.hooks.localVars
+mainTemplate.hooks.requireExtensions
+mainTemplate.hooks.renderManifest
+mainTemplate.hooks.assetPath
+mainTemplate.hooks.require
+mainTemplate.hooks.render
+mainTemplate.hooks.renderWithEntry

@@ -31,7 +31,10 @@ class Logger {
     };
   }
   getRawLogs() {
-    return this.rawLogs.join("\n");
+    if (this.rawLogs.length > 0) {
+      return this.rawLogs.join("\n");
+    }
+    return null;
   }
 }
 

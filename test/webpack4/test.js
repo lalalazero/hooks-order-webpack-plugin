@@ -26,8 +26,9 @@ testCases.all = {
 
 function cleanupSrc() {
   try {
-    fs.rmdirSync(context);
-  } catch (e) {}
+    fs.rmdirSync(context, { force: true, recursive: true });
+  } catch (e) {
+  }
 }
 
 function copyFixture() {
@@ -42,7 +43,7 @@ beforeAll(() => {
   copyFixture();
 });
 
-describe("webpack 4", () => {
+describe("webpack 4 latest", () => {
   Object.entries(testCases).forEach(([name, caseConfig]) => {
     it(`${name}`, (done) => {
       const config = require(context + "/webpack.config.js");

@@ -1,0 +1,25 @@
+mainTemplate.hooks.modules[31m caught error[39m
+mainTemplate.hooks.moduleObj[31m caught error[39m
+mainTemplate.hooks.beforeStartup[31m caught error[39m
+mainTemplate.hooks.startup[31m caught error[39m
+mainTemplate.hooks.afterStartup[31m caught error[39m
+mainTemplate.hooks.hotBootstrap[31m caught error[39m
+mainTemplate.hooks.bootstrap
+mainTemplate.hooks.localVars
+mainTemplate.hooks.requireExtensions
+mainTemplate.hooks.hashForChunk
+mainTemplate.hooks.require
+mainTemplate.hooks.hash
+mainTemplate.hooks.bootstrap
+mainTemplate.hooks.localVars
+mainTemplate.hooks.requireExtensions
+mainTemplate.hooks.require
+mainTemplate.hooks.hashForChunk
+mainTemplate.hooks.bootstrap
+mainTemplate.hooks.localVars
+mainTemplate.hooks.requireExtensions
+mainTemplate.hooks.renderManifest
+mainTemplate.hooks.assetPath
+mainTemplate.hooks.require
+mainTemplate.hooks.render
+mainTemplate.hooks.renderWithEntry
