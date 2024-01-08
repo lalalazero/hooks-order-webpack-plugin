@@ -1,0 +1,14 @@
+compiler.hooks.environment
+compiler.hooks.afterEnvironment
+compiler.hooks.entryOption
+compiler.hooks.afterPlugins
+compiler.hooks.afterResolvers
+compiler.hooks.beforeRun
+compiler.hooks.run
+compiler.hooks.normalModuleFactory
+compiler.hooks.contextModuleFactory
+compiler.hooks.beforeCompile
+compiler.hooks.compile
+compiler.hooks.thisCompilation
+compiler.hooks.compilation
+compiler.hooks.make

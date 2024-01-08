@@ -1,0 +1,9 @@
+moduleTemplate.hooks.hash
+moduleTemplate.hooks.content
+moduleTemplate.hooks.module
+moduleTemplate.hooks.render
+moduleTemplate.hooks.package
+moduleTemplate.hooks.content
+moduleTemplate.hooks.module
+moduleTemplate.hooks.render
+moduleTemplate.hooks.package
