@@ -45,10 +45,13 @@ const defaultConfig = {
   mainTemplate: true,
 };
 
+const DEFAULT_ASSET_NAME = 'runtime-hooks-order.txt'
+
 class LogRuntimeHooksOrderPlugin {
   constructor(userConfig = {}, version = 4) {
     userConfig = {
       verbose: true,
+      filename: DEFAULT_ASSET_NAME,
       silent: false,
       ...userConfig,
     };
@@ -168,7 +171,7 @@ class LogRuntimeHooksOrderPlugin {
       compilation.hooks.additionalAssets.tapAsync(PLUGIN_NAME, (callback) => {
         const rawLog = this.logger.getRawLogs();
         if (rawLog) {
-          compilation.assets["runtime-hooks-order.txt"] = {
+          compilation.assets[this.config.filename] = {
             source: function () {
               return rawLog;
             },

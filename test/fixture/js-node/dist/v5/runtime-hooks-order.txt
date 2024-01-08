@@ -51,6 +51,7 @@ mainTemplate.hooks.localVars
 mainTemplate.hooks.requireExtensions
 mainTemplate.hooks.hashForChunk
 mainTemplate.hooks.require
+moduleTemplate.hooks.hash
 chunkTemplate.hooks.hash
 mainTemplate.hooks.hash
 mainTemplate.hooks.bootstrap
@@ -64,5 +65,12 @@ mainTemplate.hooks.requireExtensions
 mainTemplate.hooks.renderManifest
 mainTemplate.hooks.assetPath
 mainTemplate.hooks.require
+moduleTemplate.hooks.content
+moduleTemplate.hooks.module
+moduleTemplate.hooks.render
+moduleTemplate.hooks.package
+moduleTemplate.hooks.content
+moduleTemplate.hooks.module
+moduleTemplate.hooks.package
 mainTemplate.hooks.render
 mainTemplate.hooks.renderWithEntry
