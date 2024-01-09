@@ -189,7 +189,20 @@ class LogRuntimeHooksOrderPlugin {
 
   applyResolverHooks() {}
 
-  applyParserHooks() {}
+  applyParserHooks(compiler) {
+    if (this.config.parser) {
+      compiler.hooks.normalModuleFactory.tap(
+        PLUGIN_NAME,
+        (normalModuleFactory) => {
+          normalModuleFactory.hooks.parser
+            .for("javascript/auto")
+            .tap(PLUGIN_NAME, (parser) => {
+              this.hookInto(parser, "javascript/auto.parser");
+            });
+        }
+      );
+    }
+  }
 
   applyFactoryHooks(compiler) {
     ["normalModuleFactory", "contextModuleFactory"]
@@ -221,6 +234,7 @@ class LogRuntimeHooksOrderPlugin {
     this.applyCompilerHooks(compiler);
     this.applyCompilationHooks(compiler);
     this.applyFactoryHooks(compiler);
+    this.applyParserHooks(compiler);
     this.applyTemplateHooks(compiler);
     this.tapForAssets(compiler);
   }

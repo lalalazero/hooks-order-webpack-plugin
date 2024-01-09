@@ -23,6 +23,14 @@ const HOOK_MAP_NAMES = {
     "javascript/dynamic",
     "javascript/esm",
   ],
+  "javascript/auto.parser.evaluate": [
+    "Literal",
+    "Identifier",
+    "CallExpression",
+  ],
+  "javascript/auto.parser.expression": [
+    "require"
+  ]
 };
 
 class Logger {
