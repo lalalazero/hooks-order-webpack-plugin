@@ -1,0 +1,2 @@
+chunkTemplate.hooks.hash SyncHook
+chunkTemplate.hooks.hash SyncHook

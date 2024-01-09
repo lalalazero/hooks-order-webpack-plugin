@@ -55,7 +55,8 @@ const testSuites = [
 ];
 
 const FIXTURES = [
-  "js-node"
+  "js-node",
+  "js-bear"
 ];
 
 FIXTURES.forEach(testFixture)

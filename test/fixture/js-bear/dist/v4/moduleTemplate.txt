@@ -1,0 +1,14 @@
+moduleTemplate.hooks.hash SyncHook
+moduleTemplate.hooks.content SyncWaterfallHook
+moduleTemplate.hooks.module SyncWaterfallHook
+moduleTemplate.hooks.render SyncWaterfallHook
+moduleTemplate.hooks.package SyncWaterfallHook
+moduleTemplate.hooks.content SyncWaterfallHook
+moduleTemplate.hooks.module SyncWaterfallHook
+moduleTemplate.hooks.render SyncWaterfallHook
+moduleTemplate.hooks.package SyncWaterfallHook
+moduleTemplate.hooks.hash SyncHook
+moduleTemplate.hooks.content SyncWaterfallHook
+moduleTemplate.hooks.module SyncWaterfallHook
+moduleTemplate.hooks.render SyncWaterfallHook
+moduleTemplate.hooks.package SyncWaterfallHook
