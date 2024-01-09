@@ -187,12 +187,6 @@ class LogRuntimeHooksOrderPlugin {
     });
   }
 
-  applyResolverHooks(compiler) {
-    if (this.config.resolverFactory) {
-      this.hookInto(compiler.resolverFactory, `resolverFactory`);
-    }
-  }
-
   applyParserHooks(compiler) {
     if (this.config.parser) {
       compiler.hooks.normalModuleFactory.tap(
@@ -213,9 +207,17 @@ class LogRuntimeHooksOrderPlugin {
       .filter((name) => !!this.config[name])
       .forEach((name) => {
         compiler.hooks[name].tap(PLUGIN_NAME, (factory) => {
+          if (!factory) {
+            throw new Error("should have instantiated factory");
+          }
+          // at this time, factory is created
           this.hookInto(factory, name);
         });
       });
+    // this is created at constructor
+    if (this.config.resolverFactory) {
+      this.hookInto(compiler.resolverFactory, "resolverFactory");
+    }
   }
 
   tapForAssets(compiler) {
@@ -239,7 +241,6 @@ class LogRuntimeHooksOrderPlugin {
     this.applyCompilationHooks(compiler);
     this.applyFactoryHooks(compiler);
     this.applyParserHooks(compiler);
-    this.applyResolverHooks(compiler);
     this.applyTemplateHooks(compiler);
     this.tapForAssets(compiler);
   }

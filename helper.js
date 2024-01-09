@@ -3,17 +3,24 @@ const chalk = require("chalk");
 const HOOK_COLOR_MAP = {
   compiler: "red",
   compilation: "yellow",
+
+  //factory
   normalModuleFactory: "blue",
   contextModuleFactory: "yellow",
-  resolverFactory: 'yellow',
+  resolverFactory: "yellow",
+
+  // factory sub-item
   "normalModuleFactory.createParser": "green",
   "normalModuleFactory.parser": "green",
+
+  // template
   mainTemplate: "red",
   chunkTemplate: "green",
   moduleTemplate: "blue",
 };
 
 const HOOK_MAP_NAMES = {
+  // factory
   "normalModuleFactory.createParser": [
     "javascript/auto",
     "javascript/dynamic",
@@ -24,14 +31,16 @@ const HOOK_MAP_NAMES = {
     "javascript/dynamic",
     "javascript/esm",
   ],
+  "resolverFactory.resolver": ["normal", "context", "loader"],
+  "resolverFactory.resolveOptions": ["normal", "context", "loader"],
+
+  // parser
   "javascript/auto.parser.evaluate": [
     "Literal",
     "Identifier",
     "CallExpression",
   ],
   "javascript/auto.parser.expression": ["require"],
-  "resolverFactory.resolver": ["normal", "context", "loader"],
-  "resolverFactory.resolveOptions": ["normal", "context", "loader"]
 };
 
 class Logger {
