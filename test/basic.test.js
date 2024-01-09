@@ -18,8 +18,6 @@ const {
   config: pluginConfig,
 } = require("log-runtime-hooks-order-webpack-plugin");
 
-const context = path.join(__dirname, "fixture/js-node");
-
 function genPlugins(version = 4) {
   const defaultPlugins = Object.keys(pluginConfig).map(
     (name) =>
@@ -56,29 +54,45 @@ const testSuites = [
   },
 ];
 
-beforeAll(() => {
-  try {
-    fs.rmdirSync(path.join(context, "dist"), { recursive: true });
-  } catch (e) {}
-});
+const FIXTURES = [
+  "js-node"
+];
 
-testSuites.forEach((testSuit) => {
-  describe(testSuit.name, () => {
-    it(`should generate runtime hooks order`, (done) => {
-      const webpackConfig = require(context + "/webpack.config.js");
-      const compiler = getWebpack(testSuit.version)({
-        context,
-        ...webpackConfig,
-        output: {
-          ...webpackConfig.output,
-          path: path.join(context, "dist", testSuit.version),
-        },
-        plugins: [...webpackConfig.plugins, ...testSuit.plugins],
-      });
+FIXTURES.forEach(testFixture)
 
-      compiler.run(() => {
-        done();
+function testFixture(fixture) {
+  const context = path.join(__dirname, "fixture", fixture);
+
+  beforeAll(() => {
+    try {
+      fs.rmdirSync(path.join(context, "dist"), { recursive: true });
+    } catch (e) {}
+  });
+
+  describe("fixture " + fixture, () => {
+    runTestSuites(context);
+  });
+}
+
+function runTestSuites(context) {
+  testSuites.forEach((testSuit) => {
+    describe(testSuit.name, () => {
+      it(`should generate runtime hooks order`, (done) => {
+        const webpackConfig = require(context + "/webpack.config.js");
+        const compiler = getWebpack(testSuit.version)({
+          context,
+          ...webpackConfig,
+          output: {
+            ...webpackConfig.output,
+            path: path.join(context, "dist", testSuit.version),
+          },
+          plugins: [...webpackConfig.plugins, ...testSuit.plugins],
+        });
+
+        compiler.run(() => {
+          done();
+        });
       });
     });
   });
-});
+}
