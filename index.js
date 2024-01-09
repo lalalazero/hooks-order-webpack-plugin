@@ -9,7 +9,7 @@ const defaultConfig = {
   compilation: true,
   normalModuleFactory: true,
   contextModuleFactory: true,
-  resolver: true,
+  resolverFactory: true,
   parser: true,
   moduleTemplate: true,
   chunkTemplate: true,
@@ -187,7 +187,11 @@ class LogRuntimeHooksOrderPlugin {
     });
   }
 
-  applyResolverHooks() {}
+  applyResolverHooks(compiler) {
+    if (this.config.resolverFactory) {
+      this.hookInto(compiler.resolverFactory, `resolverFactory`);
+    }
+  }
 
   applyParserHooks(compiler) {
     if (this.config.parser) {
@@ -235,6 +239,7 @@ class LogRuntimeHooksOrderPlugin {
     this.applyCompilationHooks(compiler);
     this.applyFactoryHooks(compiler);
     this.applyParserHooks(compiler);
+    this.applyResolverHooks(compiler);
     this.applyTemplateHooks(compiler);
     this.tapForAssets(compiler);
   }

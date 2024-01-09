@@ -5,6 +5,7 @@ const HOOK_COLOR_MAP = {
   compilation: "yellow",
   normalModuleFactory: "blue",
   contextModuleFactory: "yellow",
+  resolverFactory: 'yellow',
   "normalModuleFactory.createParser": "green",
   "normalModuleFactory.parser": "green",
   mainTemplate: "red",
@@ -28,9 +29,9 @@ const HOOK_MAP_NAMES = {
     "Identifier",
     "CallExpression",
   ],
-  "javascript/auto.parser.expression": [
-    "require"
-  ]
+  "javascript/auto.parser.expression": ["require"],
+  "resolverFactory.resolver": ["normal", "context", "loader"],
+  "resolverFactory.resolveOptions": ["normal", "context", "loader"]
 };
 
 class Logger {
@@ -41,7 +42,7 @@ class Logger {
   }
   getLogger(owner) {
     const log = (...text) => {
-      const content = text.join("")
+      const content = text.join("");
       this.rawLogs.push(content);
       if (this.silent) {
         return;
@@ -56,7 +57,7 @@ class Logger {
       this.invalidLogs.push(content);
     };
 
-    return log
+    return log;
   }
   getRawLogs() {
     if (this.rawLogs.length > 0) {

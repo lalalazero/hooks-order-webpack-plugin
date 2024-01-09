@@ -1,3 +1,5 @@
+resolverFactory.hooks.resolveOptions HookMap
+resolverFactory.hooks.resolver HookMap
 compiler.hooks.environment SyncHook
 compiler.hooks.afterEnvironment SyncHook
 compiler.hooks.entryOption SyncBailHook
@@ -20,6 +22,10 @@ compilation.hooks.addEntry SyncHook
 normalModuleFactory.hooks.beforeResolve AsyncSeriesWaterfallHook
 normalModuleFactory.hooks.factory SyncWaterfallHook
 normalModuleFactory.hooks.resolver SyncWaterfallHook
+resolverFactory.resolveOptions.for.loader SyncWaterfallHook
+resolverFactory.resolver.for.loader SyncHook
+resolverFactory.resolveOptions.for.normal SyncWaterfallHook
+resolverFactory.resolver.for.normal SyncHook
 normalModuleFactory.createParser.for.javascript/auto SyncBailHook
 normalModuleFactory.parser.for.javascript/auto SyncHook
 javascript/auto.parser.hooks.evaluateTypeof HookMap

@@ -1,3 +1,5 @@
+resolverFactory.hooks.resolveOptions HookMap
+resolverFactory.hooks.resolver HookMap
 compiler.hooks.environment SyncHook
 compiler.hooks.afterEnvironment SyncHook
 compiler.hooks.entryOption SyncBailHook
@@ -29,6 +31,10 @@ compilation.hooks.addEntry SyncHook
 normalModuleFactory.hooks.beforeResolve AsyncSeriesBailHook
 normalModuleFactory.hooks.factorize AsyncSeriesBailHook
 normalModuleFactory.hooks.resolve AsyncSeriesBailHook
+resolverFactory.resolveOptions.for.loader SyncWaterfallHook
+resolverFactory.resolver.for.loader SyncHook
+resolverFactory.resolveOptions.for.normal SyncWaterfallHook
+resolverFactory.resolver.for.normal SyncHook
 normalModuleFactory.createParser.for.javascript/auto SyncBailHook
 normalModuleFactory.parser.for.javascript/auto SyncHook
 javascript/auto.parser.hooks.evaluateTypeof HookMap
@@ -62,6 +68,8 @@ normalModuleFactory.hooks.afterResolve AsyncSeriesBailHook
 normalModuleFactory.hooks.createModule AsyncSeriesBailHook
 normalModuleFactory.hooks.module SyncWaterfallHook
 compilation.hooks.buildModule SyncHook
+resolverFactory.resolveOptions.for.normal SyncWaterfallHook
+resolverFactory.resolver.for.normal SyncHook
 compilation.hooks.normalModuleLoader SyncHook
 javascript/auto.parser.hooks.program SyncBailHook
 javascript/auto.parser.hooks.preStatement SyncBailHook
@@ -88,6 +96,8 @@ compilation.hooks.succeedModule SyncHook
 normalModuleFactory.hooks.beforeResolve AsyncSeriesBailHook
 normalModuleFactory.hooks.factorize AsyncSeriesBailHook
 normalModuleFactory.hooks.resolve AsyncSeriesBailHook
+resolverFactory.resolveOptions.for.normal SyncWaterfallHook
+resolverFactory.resolver.for.normal SyncHook
 normalModuleFactory.hooks.afterResolve AsyncSeriesBailHook
 normalModuleFactory.hooks.createModule AsyncSeriesBailHook
 normalModuleFactory.hooks.module SyncWaterfallHook
@@ -102,7 +112,6 @@ compilation.hooks.succeedModule SyncHook
 compilation.hooks.succeedEntry SyncHook
 compilation.hooks.log SyncBailHook
 compiler.hooks.finishMake AsyncSeriesHook
-compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.finishModules AsyncSeriesHook
@@ -218,7 +227,6 @@ compilation.hooks.log SyncBailHook
 compilation.hooks.record SyncHook
 compilation.hooks.needAdditionalSeal SyncBailHook
 compilation.hooks.afterSeal AsyncSeriesHook
-compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook

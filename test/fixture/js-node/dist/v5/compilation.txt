@@ -13,7 +13,6 @@ compilation.hooks.succeedEntry SyncHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
-compilation.hooks.log SyncBailHook
 compilation.hooks.finishModules AsyncSeriesHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
@@ -118,7 +117,6 @@ compilation.hooks.log SyncBailHook
 compilation.hooks.record SyncHook
 compilation.hooks.needAdditionalSeal SyncBailHook
 compilation.hooks.afterSeal AsyncSeriesHook
-compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
