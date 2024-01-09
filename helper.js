@@ -33,11 +33,8 @@ class Logger {
   }
   getLogger(owner) {
     const log = (...text) => {
-      let str = "";
-      for (let i of text) {
-        str += text;
-      }
-      this.rawLogs.push(str);
+      const content = text.join("")
+      this.rawLogs.push(content);
       if (this.silent) {
         return;
       }
