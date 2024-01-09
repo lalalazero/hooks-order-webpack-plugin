@@ -22,16 +22,17 @@ const HOOK_MAP_NAMES = {
     "javascript/auto",
     "javascript/dynamic",
     "javascript/esm",
-  ]
+  ],
 };
 
 class Logger {
   constructor(silent) {
     this.silent = silent;
     this.rawLogs = [];
+    this.invalidLogs = [];
   }
   getLogger(owner) {
-    return (...text) => {
+    const log = (...text) => {
       let str = "";
       for (let i of text) {
         str += text;
@@ -44,10 +45,23 @@ class Logger {
 
       console.log(chalk[color](...text));
     };
+
+    log.invalid = (...text) => {
+      const content = text.join("");
+      this.invalidLogs.push(content);
+    };
+
+    return log
   }
   getRawLogs() {
     if (this.rawLogs.length > 0) {
       return this.rawLogs.join("\n");
+    }
+    return null;
+  }
+  getInvalidLogs() {
+    if (this.invalidLogs.length > 0) {
+      return this.invalidLogs.join("\n");
     }
     return null;
   }

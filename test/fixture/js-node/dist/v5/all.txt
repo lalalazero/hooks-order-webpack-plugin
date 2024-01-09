@@ -12,12 +12,6 @@ compiler.hooks.contextModuleFactory SyncHook
 compiler.hooks.beforeCompile AsyncSeriesHook
 compiler.hooks.compile SyncHook
 compiler.hooks.thisCompilation SyncHook
-mainTemplate.hooks.modules-Object caught error
-mainTemplate.hooks.moduleObj-Object caught error
-mainTemplate.hooks.beforeStartup-Object caught error
-mainTemplate.hooks.startup-Object caught error
-mainTemplate.hooks.afterStartup-Object caught error
-mainTemplate.hooks.hotBootstrap-Object caught error
 compiler.hooks.compilation SyncHook
 compiler.hooks.make AsyncParallelHook
 compilation.hooks.addEntry SyncHook
@@ -127,21 +121,14 @@ mainTemplate.hooks.bootstrap SyncWaterfallHook
 mainTemplate.hooks.localVars SyncWaterfallHook
 mainTemplate.hooks.requireExtensions SyncWaterfallHook
 compilation.hooks.chunkHash SyncHook
-mainTemplate.hooks.hashForChunk Object
-mainTemplate.hooks.require Object
 compilation.hooks.log SyncBailHook
 compilation.hooks.log SyncBailHook
-moduleTemplate.hooks.hash Object
-chunkTemplate.hooks.hash Object
-mainTemplate.hooks.hash Object
 compilation.hooks.fullHash SyncHook
 compilation.hooks.log SyncBailHook
 mainTemplate.hooks.bootstrap SyncWaterfallHook
 mainTemplate.hooks.localVars SyncWaterfallHook
 mainTemplate.hooks.requireExtensions SyncWaterfallHook
 compilation.hooks.contentHash SyncHook
-mainTemplate.hooks.require Object
-mainTemplate.hooks.hashForChunk Object
 compilation.hooks.log SyncBailHook
 compilation.hooks.afterHash SyncHook
 compilation.hooks.log SyncBailHook
@@ -155,28 +142,12 @@ compilation.hooks.beforeModuleAssets SyncHook
 compilation.hooks.log SyncBailHook
 compilation.hooks.shouldGenerateChunkAssets SyncBailHook
 compilation.hooks.beforeChunkAssets SyncHook
-mainTemplate.hooks.renderManifest Object
 compilation.hooks.renderManifest SyncWaterfallHook
-mainTemplate.hooks.assetPath Object
 compilation.hooks.assetPath SyncWaterfallHook
-mainTemplate.hooks.require Object
-moduleTemplate.hooks.content Object
-moduleTemplate.hooks.module Object
-moduleTemplate.hooks.render Object
-moduleTemplate.hooks.package Object
-moduleTemplate.hooks.content Object
-moduleTemplate.hooks.module Object
-moduleTemplate.hooks.package Object
-mainTemplate.hooks.render Object
-mainTemplate.hooks.renderWithEntry Object
 compilation.hooks.chunkAsset SyncHook
 compilation.hooks.log SyncBailHook
-compilation.hooks.additionalChunkAssets Object
-compilation.hooks.additionalAssets Object
 compilation.hooks.optimizeAssets AsyncSeriesHook
 compilation.hooks.processAssets AsyncSeriesHook
-compilation.hooks.optimizeChunkAssets Object
-compilation.hooks.afterOptimizeChunkAssets Object
 compilation.hooks.afterOptimizeAssets SyncHook
 compilation.hooks.afterProcessAssets SyncHook
 compilation.hooks.log SyncBailHook
@@ -197,7 +168,6 @@ compiler.hooks.afterCompile AsyncSeriesHook
 compilation.hooks.log SyncBailHook
 compiler.hooks.shouldEmit SyncBailHook
 compiler.hooks.emit AsyncSeriesHook
-mainTemplate.hooks.assetPath Object
 compilation.hooks.assetPath SyncWaterfallHook
 compiler.hooks.assetEmitted AsyncSeriesHook
 compiler.hooks.afterEmit AsyncSeriesHook

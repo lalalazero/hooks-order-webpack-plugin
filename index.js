@@ -26,6 +26,7 @@ const parseHookName = (hook) => {
   const isAsync = name.indexOf("Async") > -1;
   const isWaterfall = name.indexOf("Waterfall") > -1;
   const isHookMap = name.indexOf("HookMap") > -1;
+  const valid = name.endsWith("Hook") || isHookMap;
 
   return {
     isBail,
@@ -34,6 +35,7 @@ const parseHookName = (hook) => {
     isWaterfall,
     isHookMap,
     hookType: name,
+    valid,
   };
 };
 
@@ -91,8 +93,13 @@ class LogRuntimeHooksOrderPlugin {
 
     for (let hookName of hookNames) {
       const hook = hooks[hookName];
-      const { isAsync, isWaterfall, isBail, isHookMap, hookType } =
+      const { isAsync, isWaterfall, isBail, isHookMap, hookType, valid } =
         parseHookName(hook);
+
+      if (!valid) {
+        log.invalid(`${owner}.hooks.${hookName} invalid, possibly deprecated.`);
+        continue;
+      }
 
       try {
         if (isHookMap) {
@@ -134,7 +141,7 @@ class LogRuntimeHooksOrderPlugin {
           });
         }
       } catch (e) {
-        log(`${owner}.hooks.${hookName}-${hookType} caught error`);
+        log(`${owner}.hooks.${hookName}-${hookType} error`);
       }
     }
   }
@@ -191,9 +198,15 @@ class LogRuntimeHooksOrderPlugin {
   tapForAssets(compiler) {
     compiler.hooks.done.tap(PLUGIN_NAME, () => {
       const text = this.logger.getRawLogs();
+      const invalidText = this.logger.getInvalidLogs();
       if (text) {
         const file = path.resolve(compiler.outputPath, this.config.filename);
         fs.writeFileSync(file, text, "utf8");
+      }
+
+      if (invalidText) {
+        const file = path.resolve(compiler.outputPath, "invalid.txt");
+        fs.writeFileSync(file, invalidText, "utf8");
       }
     });
   }

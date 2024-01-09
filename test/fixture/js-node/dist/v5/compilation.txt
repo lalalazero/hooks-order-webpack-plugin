@@ -106,12 +106,8 @@ compilation.hooks.renderManifest SyncWaterfallHook
 compilation.hooks.assetPath SyncWaterfallHook
 compilation.hooks.chunkAsset SyncHook
 compilation.hooks.log SyncBailHook
-compilation.hooks.additionalChunkAssets Object
-compilation.hooks.additionalAssets Object
 compilation.hooks.optimizeAssets AsyncSeriesHook
 compilation.hooks.processAssets AsyncSeriesHook
-compilation.hooks.optimizeChunkAssets Object
-compilation.hooks.afterOptimizeChunkAssets Object
 compilation.hooks.afterOptimizeAssets SyncHook
 compilation.hooks.afterProcessAssets SyncHook
 compilation.hooks.log SyncBailHook

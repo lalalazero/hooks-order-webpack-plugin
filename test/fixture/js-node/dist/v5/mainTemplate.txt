@@ -1,26 +1,9 @@
-mainTemplate.hooks.modules-Object caught error
-mainTemplate.hooks.moduleObj-Object caught error
-mainTemplate.hooks.beforeStartup-Object caught error
-mainTemplate.hooks.startup-Object caught error
-mainTemplate.hooks.afterStartup-Object caught error
-mainTemplate.hooks.hotBootstrap-Object caught error
 mainTemplate.hooks.bootstrap SyncWaterfallHook
 mainTemplate.hooks.localVars SyncWaterfallHook
 mainTemplate.hooks.requireExtensions SyncWaterfallHook
-mainTemplate.hooks.hashForChunk Object
-mainTemplate.hooks.require Object
-mainTemplate.hooks.hash Object
 mainTemplate.hooks.bootstrap SyncWaterfallHook
 mainTemplate.hooks.localVars SyncWaterfallHook
 mainTemplate.hooks.requireExtensions SyncWaterfallHook
-mainTemplate.hooks.require Object
-mainTemplate.hooks.hashForChunk Object
 mainTemplate.hooks.bootstrap SyncWaterfallHook
 mainTemplate.hooks.localVars SyncWaterfallHook
 mainTemplate.hooks.requireExtensions SyncWaterfallHook
-mainTemplate.hooks.renderManifest Object
-mainTemplate.hooks.assetPath Object
-mainTemplate.hooks.require Object
-mainTemplate.hooks.render Object
-mainTemplate.hooks.renderWithEntry Object
-mainTemplate.hooks.assetPath Object

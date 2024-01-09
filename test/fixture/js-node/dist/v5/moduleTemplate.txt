@@ -1,8 +1,0 @@
-moduleTemplate.hooks.hash Object
-moduleTemplate.hooks.content Object
-moduleTemplate.hooks.module Object
-moduleTemplate.hooks.render Object
-moduleTemplate.hooks.package Object
-moduleTemplate.hooks.content Object
-moduleTemplate.hooks.module Object
-moduleTemplate.hooks.package Object
