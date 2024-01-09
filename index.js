@@ -68,19 +68,58 @@ class LogRuntimeHooksOrderPlugin {
     });
   }
   hookIntoMapHook(hook, hookName, caller) {
-    const log = this.logger.getLogger(caller);
-    const { isAsync, isWaterfall } = parseHookName(hook);
+    const { isAsync } = parseHookName(hook);
     if (isAsync) {
       throw new Error("todo async hookmap");
     }
-    hook.tap(PLUGIN_NAME, (...result) => {
-      const text = `${caller}.${hookName}`;
-      log(text);
 
-      if (isWaterfall) {
-        return result && result[0];
-      }
-    });
+    this.tapHook(hook, hookName, caller, true);
+  }
+  tapHook(hook, hookName, owner, isHookMap) {
+    const log = this.logger.getLogger(owner);
+    const { isAsync, isBail, isWaterfall, hookType } = parseHookName(hook);
+    if (isAsync) {
+      hook.tapAsync(PLUGIN_NAME, function () {
+        if (isHookMap) {
+          log(`${owner}.for.${hookName} ${hookType}`);
+        } else {
+          log(`${owner}.hooks.${hookName} ${hookType}`);
+        }
+        const params = Array.prototype.slice.call(arguments);
+        let callback = null;
+        if (params.length === 1) {
+          callback = params.shift();
+        } else if (params.length > 0) {
+          callback = params.pop();
+        }
+        const validCallback = callback && typeof callback === "function";
+        if (isBail && validCallback) {
+          callback();
+          return;
+        }
+        if (params.length && isWaterfall && validCallback) {
+          callback.apply(null, null, params);
+          return;
+        }
+        if (validCallback) {
+          callback(null, ...params);
+        }
+      });
+    } else {
+      hook.tap(PLUGIN_NAME, function () {
+        const params = Array.prototype.slice.call(arguments);
+
+        if (isHookMap) {
+          log(`${owner}.for.${hookName} ${hookType}`);
+        } else {
+          log(`${owner}.hooks.${hookName} ${hookType}`);
+        }
+
+        if (params && params[0] && isWaterfall) {
+          return params[0];
+        }
+      });
+    }
   }
   hookInto(target, owner) {
     if (!target || !target.hooks) {
@@ -93,8 +132,7 @@ class LogRuntimeHooksOrderPlugin {
 
     for (let hookName of hookNames) {
       const hook = hooks[hookName];
-      const { isAsync, isWaterfall, isBail, isHookMap, hookType, valid } =
-        parseHookName(hook);
+      const { isHookMap, hookType, valid } = parseHookName(hook);
 
       if (!valid) {
         log.invalid(`${owner}.hooks.${hookName} invalid, possibly deprecated.`);
@@ -103,43 +141,11 @@ class LogRuntimeHooksOrderPlugin {
 
       try {
         if (isHookMap) {
+          log(`${owner}.hooks.${hookName} HookMap`);
           this.hookIntoMap(hook, `${owner}.${hookName}`);
           continue;
         }
-        if (isAsync) {
-          hook.tapAsync(PLUGIN_NAME, function () {
-            log(`${owner}.hooks.${hookName} ${hookType}`);
-            const params = Array.prototype.slice.call(arguments);
-            let callback = null;
-            if (params.length === 1) {
-              callback = params.shift();
-            } else if (params.length > 0) {
-              callback = params.pop();
-            }
-            const validCallback = callback && typeof callback === "function";
-            if (isBail && validCallback) {
-              callback();
-              return;
-            }
-            if (params.length && isWaterfall && validCallback) {
-              callback.apply(null, null, params);
-              return;
-            }
-            if (validCallback) {
-              callback(null, ...params);
-            }
-          });
-        } else {
-          hook.tap(PLUGIN_NAME, function () {
-            const params = Array.prototype.slice.call(arguments);
-
-            log(`${owner}.hooks.${hookName} ${hookType}`);
-
-            if (params && params[0] && isWaterfall) {
-              return params[0];
-            }
-          });
-        }
+        this.tapHook(hook, hookName, owner);
       } catch (e) {
         log(`${owner}.hooks.${hookName}-${hookType} error`);
       }

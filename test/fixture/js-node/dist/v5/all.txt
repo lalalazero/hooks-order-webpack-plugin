@@ -8,18 +8,29 @@ compiler.hooks.beforeRun AsyncSeriesHook
 compiler.hooks.run AsyncSeriesHook
 compiler.hooks.readRecords AsyncSeriesHook
 compiler.hooks.normalModuleFactory SyncHook
+normalModuleFactory.hooks.resolveForScheme HookMap
+normalModuleFactory.hooks.resolveInScheme HookMap
+normalModuleFactory.hooks.createParser HookMap
+normalModuleFactory.hooks.parser HookMap
+normalModuleFactory.hooks.createGenerator HookMap
+normalModuleFactory.hooks.generator HookMap
+normalModuleFactory.hooks.createModuleClass HookMap
 compiler.hooks.contextModuleFactory SyncHook
 compiler.hooks.beforeCompile AsyncSeriesHook
 compiler.hooks.compile SyncHook
 compiler.hooks.thisCompilation SyncHook
 compiler.hooks.compilation SyncHook
+compilation.hooks.runtimeRequirementInChunk HookMap
+compilation.hooks.runtimeRequirementInModule HookMap
+compilation.hooks.runtimeRequirementInTree HookMap
+compilation.hooks.statsPreset HookMap
 compiler.hooks.make AsyncParallelHook
 compilation.hooks.addEntry SyncHook
 normalModuleFactory.hooks.beforeResolve AsyncSeriesBailHook
 normalModuleFactory.hooks.factorize AsyncSeriesBailHook
 normalModuleFactory.hooks.resolve AsyncSeriesBailHook
-normalModuleFactory.createParser.javascript/auto
-normalModuleFactory.parser.javascript/auto
+normalModuleFactory.createParser.for.javascript/auto SyncBailHook
+normalModuleFactory.parser.for.javascript/auto SyncHook
 normalModuleFactory.hooks.afterResolve AsyncSeriesBailHook
 normalModuleFactory.hooks.createModule AsyncSeriesBailHook
 normalModuleFactory.hooks.module SyncWaterfallHook

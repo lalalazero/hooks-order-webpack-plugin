@@ -1,3 +1,7 @@
+compilation.hooks.runtimeRequirementInChunk HookMap
+compilation.hooks.runtimeRequirementInModule HookMap
+compilation.hooks.runtimeRequirementInTree HookMap
+compilation.hooks.statsPreset HookMap
 compilation.hooks.addEntry SyncHook
 compilation.hooks.buildModule SyncHook
 compilation.hooks.normalModuleLoader SyncHook

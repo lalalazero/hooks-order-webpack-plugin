@@ -1,8 +1,12 @@
+normalModuleFactory.hooks.createParser HookMap
+normalModuleFactory.hooks.parser HookMap
+normalModuleFactory.hooks.createGenerator HookMap
+normalModuleFactory.hooks.generator HookMap
 normalModuleFactory.hooks.beforeResolve AsyncSeriesWaterfallHook
 normalModuleFactory.hooks.factory SyncWaterfallHook
 normalModuleFactory.hooks.resolver SyncWaterfallHook
-normalModuleFactory.createParser.javascript/auto
-normalModuleFactory.parser.javascript/auto
+normalModuleFactory.createParser.for.javascript/auto SyncBailHook
+normalModuleFactory.parser.for.javascript/auto SyncHook
 normalModuleFactory.hooks.afterResolve AsyncSeriesWaterfallHook
 normalModuleFactory.hooks.createModule SyncBailHook
 normalModuleFactory.hooks.module SyncWaterfallHook
