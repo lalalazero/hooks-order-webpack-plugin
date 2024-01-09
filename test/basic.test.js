@@ -28,7 +28,7 @@ function genPlugins(version = 4) {
           verbose: false,
           silent: true,
           [name]: true,
-          filename: `${name}-runtime-hooks-order.txt`,
+          filename: `${name}.txt`,
         },
         version
       )

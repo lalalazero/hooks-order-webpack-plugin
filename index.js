@@ -16,7 +16,7 @@ const defaultConfig = {
   mainTemplate: true,
 };
 
-const DEFAULT_ASSET_NAME = "runtime-hooks-order.txt";
+const DEFAULT_ASSET_NAME = "all.txt";
 
 const parseHookName = (hook) => {
   const name = hook.constructor.name;
