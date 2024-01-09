@@ -1,8 +1,8 @@
-moduleTemplate.hooks.hash
-moduleTemplate.hooks.content
-moduleTemplate.hooks.module
-moduleTemplate.hooks.render
-moduleTemplate.hooks.package
-moduleTemplate.hooks.content
-moduleTemplate.hooks.module
-moduleTemplate.hooks.package
+moduleTemplate.hooks.hash Object
+moduleTemplate.hooks.content Object
+moduleTemplate.hooks.module Object
+moduleTemplate.hooks.render Object
+moduleTemplate.hooks.package Object
+moduleTemplate.hooks.content Object
+moduleTemplate.hooks.module Object
+moduleTemplate.hooks.package Object

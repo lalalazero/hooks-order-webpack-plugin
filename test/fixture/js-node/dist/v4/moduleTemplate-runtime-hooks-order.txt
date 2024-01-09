@@ -1,9 +1,9 @@
-moduleTemplate.hooks.hash
-moduleTemplate.hooks.content
-moduleTemplate.hooks.module
-moduleTemplate.hooks.render
-moduleTemplate.hooks.package
-moduleTemplate.hooks.content
-moduleTemplate.hooks.module
-moduleTemplate.hooks.render
-moduleTemplate.hooks.package
+moduleTemplate.hooks.hash SyncHook
+moduleTemplate.hooks.content SyncWaterfallHook
+moduleTemplate.hooks.module SyncWaterfallHook
+moduleTemplate.hooks.render SyncWaterfallHook
+moduleTemplate.hooks.package SyncWaterfallHook
+moduleTemplate.hooks.content SyncWaterfallHook
+moduleTemplate.hooks.module SyncWaterfallHook
+moduleTemplate.hooks.render SyncWaterfallHook
+moduleTemplate.hooks.package SyncWaterfallHook

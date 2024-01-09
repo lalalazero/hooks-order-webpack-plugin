@@ -1,14 +1,14 @@
-normalModuleFactory.hooks.beforeResolve
-normalModuleFactory.hooks.factory
-normalModuleFactory.hooks.resolver
+normalModuleFactory.hooks.beforeResolve AsyncSeriesWaterfallHook
+normalModuleFactory.hooks.factory SyncWaterfallHook
+normalModuleFactory.hooks.resolver SyncWaterfallHook
 normalModuleFactory.createParser.javascript/auto
 normalModuleFactory.parser.javascript/auto
-normalModuleFactory.hooks.afterResolve
-normalModuleFactory.hooks.createModule
-normalModuleFactory.hooks.module
-normalModuleFactory.hooks.beforeResolve
-normalModuleFactory.hooks.factory
-normalModuleFactory.hooks.resolver
-normalModuleFactory.hooks.afterResolve
-normalModuleFactory.hooks.createModule
-normalModuleFactory.hooks.module
+normalModuleFactory.hooks.afterResolve AsyncSeriesWaterfallHook
+normalModuleFactory.hooks.createModule SyncBailHook
+normalModuleFactory.hooks.module SyncWaterfallHook
+normalModuleFactory.hooks.beforeResolve AsyncSeriesWaterfallHook
+normalModuleFactory.hooks.factory SyncWaterfallHook
+normalModuleFactory.hooks.resolver SyncWaterfallHook
+normalModuleFactory.hooks.afterResolve AsyncSeriesWaterfallHook
+normalModuleFactory.hooks.createModule SyncBailHook
+normalModuleFactory.hooks.module SyncWaterfallHook

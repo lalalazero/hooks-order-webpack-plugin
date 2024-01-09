@@ -1,181 +1,208 @@
-compiler.hooks.environment
-compiler.hooks.afterEnvironment
-compiler.hooks.entryOption
-compiler.hooks.afterPlugins
-compiler.hooks.afterResolvers
-compiler.hooks.initialize
-compiler.hooks.beforeRun
-compiler.hooks.run
-compiler.hooks.readRecords
-compiler.hooks.normalModuleFactory
-compiler.hooks.contextModuleFactory
-compiler.hooks.beforeCompile
-compiler.hooks.compile
-compiler.hooks.thisCompilation
-mainTemplate.hooks.modules caught error
-mainTemplate.hooks.moduleObj caught error
-mainTemplate.hooks.beforeStartup caught error
-mainTemplate.hooks.startup caught error
-mainTemplate.hooks.afterStartup caught error
-mainTemplate.hooks.hotBootstrap caught error
-compiler.hooks.compilation
-compiler.hooks.make
-compilation.hooks.addEntry
-normalModuleFactory.hooks.beforeResolve
-normalModuleFactory.hooks.factorize
-normalModuleFactory.hooks.resolve
+compiler.hooks.environment SyncHook
+compiler.hooks.afterEnvironment SyncHook
+compiler.hooks.entryOption SyncBailHook
+compiler.hooks.afterPlugins SyncHook
+compiler.hooks.afterResolvers SyncHook
+compiler.hooks.initialize SyncHook
+compiler.hooks.beforeRun AsyncSeriesHook
+compiler.hooks.run AsyncSeriesHook
+compiler.hooks.readRecords AsyncSeriesHook
+compiler.hooks.normalModuleFactory SyncHook
+compiler.hooks.contextModuleFactory SyncHook
+compiler.hooks.beforeCompile AsyncSeriesHook
+compiler.hooks.compile SyncHook
+compiler.hooks.thisCompilation SyncHook
+mainTemplate.hooks.modules-Object caught error
+mainTemplate.hooks.moduleObj-Object caught error
+mainTemplate.hooks.beforeStartup-Object caught error
+mainTemplate.hooks.startup-Object caught error
+mainTemplate.hooks.afterStartup-Object caught error
+mainTemplate.hooks.hotBootstrap-Object caught error
+compiler.hooks.compilation SyncHook
+compiler.hooks.make AsyncParallelHook
+compilation.hooks.addEntry SyncHook
+normalModuleFactory.hooks.beforeResolve AsyncSeriesBailHook
+normalModuleFactory.hooks.factorize AsyncSeriesBailHook
+normalModuleFactory.hooks.resolve AsyncSeriesBailHook
 normalModuleFactory.createParser.javascript/auto
 normalModuleFactory.parser.javascript/auto
-normalModuleFactory.hooks.afterResolve
-normalModuleFactory.hooks.createModule
-normalModuleFactory.hooks.module
-compilation.hooks.buildModule
-compilation.hooks.normalModuleLoader
-compilation.hooks.succeedModule
-normalModuleFactory.hooks.beforeResolve
-normalModuleFactory.hooks.factorize
-normalModuleFactory.hooks.resolve
-normalModuleFactory.hooks.afterResolve
-normalModuleFactory.hooks.createModule
-normalModuleFactory.hooks.module
-compilation.hooks.buildModule
-compilation.hooks.normalModuleLoader
-compilation.hooks.succeedModule
-compilation.hooks.succeedEntry
-compilation.hooks.log
-compiler.hooks.finishMake
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.finishModules
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.seal
-compilation.hooks.optimizeDependencies
-compilation.hooks.log
-compilation.hooks.afterOptimizeDependencies
-compilation.hooks.log
-compilation.hooks.beforeChunks
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.afterChunks
-compilation.hooks.log
-compilation.hooks.optimize
-compilation.hooks.optimizeModules
-compilation.hooks.afterOptimizeModules
-compilation.hooks.optimizeChunks
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.log
-compilation.hooks.afterOptimizeChunks
-compilation.hooks.optimizeTree
-compilation.hooks.afterOptimizeTree
-compilation.hooks.optimizeChunkModules
-compilation.hooks.afterOptimizeChunkModules
-compilation.hooks.shouldRecord
-compilation.hooks.reviveModules
-compilation.hooks.beforeModuleIds
-compilation.hooks.moduleIds
-compilation.hooks.optimizeModuleIds
-compilation.hooks.afterOptimizeModuleIds
-compilation.hooks.reviveChunks
-compilation.hooks.beforeChunkIds
-compilation.hooks.chunkIds
-compilation.hooks.optimizeChunkIds
-compilation.hooks.afterOptimizeChunkIds
-compilation.hooks.log
-compilation.hooks.recordModules
-compilation.hooks.recordChunks
-compilation.hooks.optimizeCodeGeneration
-compilation.hooks.log
-compilation.hooks.beforeModuleHash
-compilation.hooks.log
-compilation.hooks.afterModuleHash
-compilation.hooks.log
-compilation.hooks.beforeCodeGeneration
-compilation.hooks.log
-compilation.hooks.afterCodeGeneration
-compilation.hooks.log
-compilation.hooks.beforeRuntimeRequirements
-compilation.hooks.additionalModuleRuntimeRequirements
-compilation.hooks.additionalModuleRuntimeRequirements
-compilation.hooks.log
-compilation.hooks.additionalChunkRuntimeRequirements
-compilation.hooks.log
-compilation.hooks.additionalTreeRuntimeRequirements
-compilation.hooks.runtimeModule
-compilation.hooks.log
-compilation.hooks.afterRuntimeRequirements
-compilation.hooks.log
-compilation.hooks.beforeHash
-compilation.hooks.log
-compilation.hooks.log
-mainTemplate.hooks.bootstrap
-mainTemplate.hooks.localVars
-mainTemplate.hooks.requireExtensions
-compilation.hooks.chunkHash
-mainTemplate.hooks.hashForChunk
-mainTemplate.hooks.require
-compilation.hooks.log
-compilation.hooks.log
-moduleTemplate.hooks.hash
-chunkTemplate.hooks.hash
-mainTemplate.hooks.hash
-compilation.hooks.fullHash
-compilation.hooks.log
-mainTemplate.hooks.bootstrap
-mainTemplate.hooks.localVars
-mainTemplate.hooks.requireExtensions
-compilation.hooks.contentHash
-mainTemplate.hooks.require
-mainTemplate.hooks.hashForChunk
-compilation.hooks.log
-compilation.hooks.afterHash
-compilation.hooks.log
-mainTemplate.hooks.bootstrap
-mainTemplate.hooks.localVars
-mainTemplate.hooks.requireExtensions
-compilation.hooks.log
-compilation.hooks.recordHash
-compilation.hooks.log
-compilation.hooks.beforeModuleAssets
-compilation.hooks.log
-compilation.hooks.shouldGenerateChunkAssets
-compilation.hooks.beforeChunkAssets
-mainTemplate.hooks.renderManifest
-compilation.hooks.renderManifest
-mainTemplate.hooks.assetPath
-compilation.hooks.assetPath
-mainTemplate.hooks.require
-moduleTemplate.hooks.content
-moduleTemplate.hooks.module
-moduleTemplate.hooks.render
-moduleTemplate.hooks.package
-moduleTemplate.hooks.content
-moduleTemplate.hooks.module
-moduleTemplate.hooks.package
-mainTemplate.hooks.render
-mainTemplate.hooks.renderWithEntry
-compilation.hooks.chunkAsset
-compilation.hooks.log
-compilation.hooks.processAdditionalAssets
-compilation.hooks.processAdditionalAssets
-compilation.hooks.processAdditionalAssets
-compilation.hooks.processAdditionalAssets
-compilation.hooks.processAdditionalAssets
-compilation.hooks.processAdditionalAssets
-compilation.hooks.additionalChunkAssets
-compilation.hooks.additionalAssets
+normalModuleFactory.hooks.afterResolve AsyncSeriesBailHook
+normalModuleFactory.hooks.createModule AsyncSeriesBailHook
+normalModuleFactory.hooks.module SyncWaterfallHook
+compilation.hooks.buildModule SyncHook
+compilation.hooks.normalModuleLoader SyncHook
+compilation.hooks.succeedModule SyncHook
+normalModuleFactory.hooks.beforeResolve AsyncSeriesBailHook
+normalModuleFactory.hooks.factorize AsyncSeriesBailHook
+normalModuleFactory.hooks.resolve AsyncSeriesBailHook
+normalModuleFactory.hooks.afterResolve AsyncSeriesBailHook
+normalModuleFactory.hooks.createModule AsyncSeriesBailHook
+normalModuleFactory.hooks.module SyncWaterfallHook
+compilation.hooks.buildModule SyncHook
+compilation.hooks.normalModuleLoader SyncHook
+compilation.hooks.succeedModule SyncHook
+compilation.hooks.succeedEntry SyncHook
+compilation.hooks.log SyncBailHook
+compiler.hooks.finishMake AsyncSeriesHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.finishModules AsyncSeriesHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.seal SyncHook
+compilation.hooks.optimizeDependencies SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.afterOptimizeDependencies SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.beforeChunks SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.afterChunks SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.optimize SyncHook
+compilation.hooks.optimizeModules SyncBailHook
+compilation.hooks.afterOptimizeModules SyncHook
+compilation.hooks.optimizeChunks SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.afterOptimizeChunks SyncHook
+compilation.hooks.optimizeTree AsyncSeriesHook
+compilation.hooks.afterOptimizeTree SyncHook
+compilation.hooks.optimizeChunkModules AsyncSeriesBailHook
+compilation.hooks.afterOptimizeChunkModules SyncHook
+compilation.hooks.shouldRecord SyncBailHook
+compilation.hooks.reviveModules SyncHook
+compilation.hooks.beforeModuleIds SyncHook
+compilation.hooks.moduleIds SyncHook
+compilation.hooks.optimizeModuleIds SyncHook
+compilation.hooks.afterOptimizeModuleIds SyncHook
+compilation.hooks.reviveChunks SyncHook
+compilation.hooks.beforeChunkIds SyncHook
+compilation.hooks.chunkIds SyncHook
+compilation.hooks.optimizeChunkIds SyncHook
+compilation.hooks.afterOptimizeChunkIds SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.recordModules SyncHook
+compilation.hooks.recordChunks SyncHook
+compilation.hooks.optimizeCodeGeneration SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.beforeModuleHash SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.afterModuleHash SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.beforeCodeGeneration SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.afterCodeGeneration SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.beforeRuntimeRequirements SyncHook
+compilation.hooks.additionalModuleRuntimeRequirements SyncHook
+compilation.hooks.additionalModuleRuntimeRequirements SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.additionalChunkRuntimeRequirements SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.additionalTreeRuntimeRequirements SyncHook
+compilation.hooks.runtimeModule SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.afterRuntimeRequirements SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.beforeHash SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+mainTemplate.hooks.bootstrap SyncWaterfallHook
+mainTemplate.hooks.localVars SyncWaterfallHook
+mainTemplate.hooks.requireExtensions SyncWaterfallHook
+compilation.hooks.chunkHash SyncHook
+mainTemplate.hooks.hashForChunk Object
+mainTemplate.hooks.require Object
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+moduleTemplate.hooks.hash Object
+chunkTemplate.hooks.hash Object
+mainTemplate.hooks.hash Object
+compilation.hooks.fullHash SyncHook
+compilation.hooks.log SyncBailHook
+mainTemplate.hooks.bootstrap SyncWaterfallHook
+mainTemplate.hooks.localVars SyncWaterfallHook
+mainTemplate.hooks.requireExtensions SyncWaterfallHook
+compilation.hooks.contentHash SyncHook
+mainTemplate.hooks.require Object
+mainTemplate.hooks.hashForChunk Object
+compilation.hooks.log SyncBailHook
+compilation.hooks.afterHash SyncHook
+compilation.hooks.log SyncBailHook
+mainTemplate.hooks.bootstrap SyncWaterfallHook
+mainTemplate.hooks.localVars SyncWaterfallHook
+mainTemplate.hooks.requireExtensions SyncWaterfallHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.recordHash SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.beforeModuleAssets SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.shouldGenerateChunkAssets SyncBailHook
+compilation.hooks.beforeChunkAssets SyncHook
+mainTemplate.hooks.renderManifest Object
+compilation.hooks.renderManifest SyncWaterfallHook
+mainTemplate.hooks.assetPath Object
+compilation.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.require Object
+moduleTemplate.hooks.content Object
+moduleTemplate.hooks.module Object
+moduleTemplate.hooks.render Object
+moduleTemplate.hooks.package Object
+moduleTemplate.hooks.content Object
+moduleTemplate.hooks.module Object
+moduleTemplate.hooks.package Object
+mainTemplate.hooks.render Object
+mainTemplate.hooks.renderWithEntry Object
+compilation.hooks.chunkAsset SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.additionalChunkAssets Object
+compilation.hooks.additionalAssets Object
+compilation.hooks.optimizeAssets AsyncSeriesHook
+compilation.hooks.processAssets AsyncSeriesHook
+compilation.hooks.optimizeChunkAssets Object
+compilation.hooks.afterOptimizeChunkAssets Object
+compilation.hooks.afterOptimizeAssets SyncHook
+compilation.hooks.afterProcessAssets SyncHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.record SyncHook
+compilation.hooks.needAdditionalSeal SyncBailHook
+compilation.hooks.afterSeal AsyncSeriesHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.log SyncBailHook
+compiler.hooks.afterCompile AsyncSeriesHook
+compilation.hooks.log SyncBailHook
+compiler.hooks.shouldEmit SyncBailHook
+compiler.hooks.emit AsyncSeriesHook
+mainTemplate.hooks.assetPath Object
+compilation.hooks.assetPath SyncWaterfallHook
+compiler.hooks.assetEmitted AsyncSeriesHook
+compiler.hooks.afterEmit AsyncSeriesHook
+compilation.hooks.log SyncBailHook
+compilation.hooks.needAdditionalPass SyncBailHook
+compiler.hooks.emitRecords AsyncSeriesHook
+compilation.hooks.log SyncBailHook
+compiler.hooks.done AsyncSeriesHook

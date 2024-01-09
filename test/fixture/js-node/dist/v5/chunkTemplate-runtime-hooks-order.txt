@@ -1,1 +1,1 @@
-chunkTemplate.hooks.hash
+chunkTemplate.hooks.hash Object

@@ -1,53 +1,60 @@
-compilation.hooks.buildModule
-compilation.hooks.normalModuleLoader
-compilation.hooks.succeedModule
-compilation.hooks.buildModule
-compilation.hooks.normalModuleLoader
-compilation.hooks.succeedModule
-compilation.hooks.finishModules
-compilation.hooks.seal
-compilation.hooks.optimizeDependenciesBasic
-compilation.hooks.optimizeDependencies
-compilation.hooks.optimizeDependenciesAdvanced
-compilation.hooks.afterOptimizeDependencies
-compilation.hooks.optimize
-compilation.hooks.optimizeModulesBasic
-compilation.hooks.optimizeModules
-compilation.hooks.optimizeModulesAdvanced
-compilation.hooks.afterOptimizeModules
-compilation.hooks.optimizeChunksBasic
-compilation.hooks.optimizeChunks
-compilation.hooks.optimizeChunksAdvanced
-compilation.hooks.afterOptimizeChunks
-compilation.hooks.optimizeTree
-compilation.hooks.afterOptimizeTree
-compilation.hooks.optimizeChunkModulesBasic
-compilation.hooks.optimizeChunkModules
-compilation.hooks.optimizeChunkModulesAdvanced
-compilation.hooks.afterOptimizeChunkModules
-compilation.hooks.shouldRecord
-compilation.hooks.reviveModules
-compilation.hooks.optimizeModuleOrder
-compilation.hooks.advancedOptimizeModuleOrder
-compilation.hooks.beforeModuleIds
-compilation.hooks.moduleIds
-compilation.hooks.optimizeModuleIds
-compilation.hooks.afterOptimizeModuleIds
-compilation.hooks.reviveChunks
-compilation.hooks.optimizeChunkOrder
-compilation.hooks.beforeChunkIds
-compilation.hooks.optimizeChunkIds
-compilation.hooks.afterOptimizeChunkIds
-compilation.hooks.recordModules
-compilation.hooks.recordChunks
-compilation.hooks.beforeHash
-compilation.hooks.chunkHash
-compilation.hooks.afterHash
-compilation.hooks.recordHash
-compilation.hooks.beforeModuleAssets
-compilation.hooks.shouldGenerateChunkAssets
-compilation.hooks.beforeChunkAssets
-compilation.hooks.chunkAsset
-compilation.hooks.additionalChunkAssets
-compilation.hooks.record
-compilation.hooks.additionalAssets
+compilation.hooks.buildModule SyncHook
+compilation.hooks.normalModuleLoader SyncHook
+compilation.hooks.succeedModule SyncHook
+compilation.hooks.buildModule SyncHook
+compilation.hooks.normalModuleLoader SyncHook
+compilation.hooks.succeedModule SyncHook
+compilation.hooks.finishModules SyncHook
+compilation.hooks.seal SyncHook
+compilation.hooks.optimizeDependenciesBasic SyncBailHook
+compilation.hooks.optimizeDependencies SyncBailHook
+compilation.hooks.optimizeDependenciesAdvanced SyncBailHook
+compilation.hooks.afterOptimizeDependencies SyncHook
+compilation.hooks.optimize SyncHook
+compilation.hooks.optimizeModulesBasic SyncBailHook
+compilation.hooks.optimizeModules SyncBailHook
+compilation.hooks.optimizeModulesAdvanced SyncBailHook
+compilation.hooks.afterOptimizeModules SyncHook
+compilation.hooks.optimizeChunksBasic SyncBailHook
+compilation.hooks.optimizeChunks SyncBailHook
+compilation.hooks.optimizeChunksAdvanced SyncBailHook
+compilation.hooks.afterOptimizeChunks SyncHook
+compilation.hooks.optimizeTree AsyncSeriesHook
+compilation.hooks.afterOptimizeTree SyncHook
+compilation.hooks.optimizeChunkModulesBasic SyncBailHook
+compilation.hooks.optimizeChunkModules SyncBailHook
+compilation.hooks.optimizeChunkModulesAdvanced SyncBailHook
+compilation.hooks.afterOptimizeChunkModules SyncHook
+compilation.hooks.shouldRecord SyncBailHook
+compilation.hooks.reviveModules SyncHook
+compilation.hooks.optimizeModuleOrder SyncHook
+compilation.hooks.advancedOptimizeModuleOrder SyncHook
+compilation.hooks.beforeModuleIds SyncHook
+compilation.hooks.moduleIds SyncHook
+compilation.hooks.optimizeModuleIds SyncHook
+compilation.hooks.afterOptimizeModuleIds SyncHook
+compilation.hooks.reviveChunks SyncHook
+compilation.hooks.optimizeChunkOrder SyncHook
+compilation.hooks.beforeChunkIds SyncHook
+compilation.hooks.optimizeChunkIds SyncHook
+compilation.hooks.afterOptimizeChunkIds SyncHook
+compilation.hooks.recordModules SyncHook
+compilation.hooks.recordChunks SyncHook
+compilation.hooks.beforeHash SyncHook
+compilation.hooks.chunkHash SyncHook
+compilation.hooks.afterHash SyncHook
+compilation.hooks.recordHash SyncHook
+compilation.hooks.beforeModuleAssets SyncHook
+compilation.hooks.shouldGenerateChunkAssets SyncBailHook
+compilation.hooks.beforeChunkAssets SyncHook
+compilation.hooks.chunkAsset SyncHook
+compilation.hooks.additionalChunkAssets SyncHook
+compilation.hooks.record SyncHook
+compilation.hooks.additionalAssets AsyncSeriesHook
+compilation.hooks.optimizeChunkAssets AsyncSeriesHook
+compilation.hooks.afterOptimizeChunkAssets SyncHook
+compilation.hooks.optimizeAssets AsyncSeriesHook
+compilation.hooks.afterOptimizeAssets SyncHook
+compilation.hooks.needAdditionalSeal SyncBailHook
+compilation.hooks.afterSeal AsyncSeriesHook
+compilation.hooks.needAdditionalPass SyncBailHook

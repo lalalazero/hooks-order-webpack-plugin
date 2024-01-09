@@ -1,4 +1,6 @@
 const { Logger, HOOK_MAP_NAMES } = require("./helper");
+const path = require("path");
+const fs = require("fs");
 
 const PLUGIN_NAME = "LogRuntimeHooksOrderPlugin";
 
@@ -31,6 +33,7 @@ const parseHookName = (hook) => {
     isAsync,
     isWaterfall,
     isHookMap,
+    hookType: name,
   };
 };
 
@@ -88,7 +91,8 @@ class LogRuntimeHooksOrderPlugin {
 
     for (let hookName of hookNames) {
       const hook = hooks[hookName];
-      const { isAsync, isWaterfall, isBail, isHookMap } = parseHookName(hook);
+      const { isAsync, isWaterfall, isBail, isHookMap, hookType } =
+        parseHookName(hook);
 
       try {
         if (isHookMap) {
@@ -97,34 +101,40 @@ class LogRuntimeHooksOrderPlugin {
         }
         if (isAsync) {
           hook.tapAsync(PLUGIN_NAME, function () {
-            const len = arguments.length;
-            const callback = arguments[len - 1];
-            const result = Array.from(arguments[(0, len - 1)]);
+            log(`${owner}.hooks.${hookName} ${hookType}`);
+            const params = Array.prototype.slice.call(arguments);
+            let callback = null;
+            if (params.length === 1) {
+              callback = params.shift();
+            } else if (params.length > 0) {
+              callback = params.pop();
+            }
             const validCallback = callback && typeof callback === "function";
-            log(`${owner}.hooks.${hookName}`);
             if (isBail && validCallback) {
               callback();
               return;
             }
-            if (result && isWaterfall && validCallback) {
-              callback(null, ...result);
+            if (params.length && isWaterfall && validCallback) {
+              callback.apply(null, null, params);
               return;
             }
             if (validCallback) {
-              callback(...result);
+              callback(null, ...params);
             }
           });
         } else {
-          hook.tap(PLUGIN_NAME, (...args) => {
-            log(`${owner}.hooks.${hookName}`);
+          hook.tap(PLUGIN_NAME, function () {
+            const params = Array.prototype.slice.call(arguments);
 
-            if (args && args[0] && isWaterfall) {
-              return args[0];
+            log(`${owner}.hooks.${hookName} ${hookType}`);
+
+            if (params && params[0] && isWaterfall) {
+              return params[0];
             }
           });
         }
       } catch (e) {
-        log(`${owner}.hooks.${hookName} caught error`);
+        log(`${owner}.hooks.${hookName}-${hookType} caught error`);
       }
     }
   }
@@ -179,22 +189,12 @@ class LogRuntimeHooksOrderPlugin {
   }
 
   tapForAssets(compiler) {
-    compiler.hooks.compilation.tap(PLUGIN_NAME, (compilation) => {
-      compilation.hooks.additionalAssets.tapAsync(PLUGIN_NAME, (callback) => {
-        const rawLog = this.logger.getRawLogs();
-        if (rawLog) {
-          compilation.assets[this.config.filename] = {
-            source: function () {
-              return rawLog;
-            },
-            size: function () {
-              return 2345;
-            },
-          };
-        }
-
-        callback();
-      });
+    compiler.hooks.done.tap(PLUGIN_NAME, () => {
+      const text = this.logger.getRawLogs();
+      if (text) {
+        const file = path.resolve(compiler.outputPath, this.config.filename);
+        fs.writeFileSync(file, text, "utf8");
+      }
     });
   }
 

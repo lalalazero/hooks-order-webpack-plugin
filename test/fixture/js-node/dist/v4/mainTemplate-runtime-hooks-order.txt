@@ -1,45 +1,46 @@
-mainTemplate.hooks.hash
-mainTemplate.hooks.hash
-mainTemplate.hooks.hashForChunk
-mainTemplate.hooks.bootstrap
-mainTemplate.hooks.localVars
-mainTemplate.hooks.moduleObj
-mainTemplate.hooks.moduleRequire
-mainTemplate.hooks.require
-mainTemplate.hooks.assetPath
-mainTemplate.hooks.requireExtensions
-mainTemplate.hooks.beforeStartup
-mainTemplate.hooks.afterStartup
-mainTemplate.hooks.moduleRequire
-mainTemplate.hooks.startup
-mainTemplate.hooks.hash
-mainTemplate.hooks.hashForChunk
-mainTemplate.hooks.bootstrap
-mainTemplate.hooks.localVars
-mainTemplate.hooks.moduleObj
-mainTemplate.hooks.moduleRequire
-mainTemplate.hooks.require
-mainTemplate.hooks.assetPath
-mainTemplate.hooks.requireExtensions
-mainTemplate.hooks.beforeStartup
-mainTemplate.hooks.afterStartup
-mainTemplate.hooks.moduleRequire
-mainTemplate.hooks.startup
-mainTemplate.hooks.renderManifest
-mainTemplate.hooks.globalHashPaths
-mainTemplate.hooks.globalHash
-mainTemplate.hooks.assetPath
-mainTemplate.hooks.bootstrap
-mainTemplate.hooks.localVars
-mainTemplate.hooks.moduleObj
-mainTemplate.hooks.moduleRequire
-mainTemplate.hooks.require
-mainTemplate.hooks.assetPath
-mainTemplate.hooks.requireExtensions
-mainTemplate.hooks.beforeStartup
-mainTemplate.hooks.afterStartup
-mainTemplate.hooks.moduleRequire
-mainTemplate.hooks.startup
-mainTemplate.hooks.modules
-mainTemplate.hooks.render
-mainTemplate.hooks.renderWithEntry
+mainTemplate.hooks.hash SyncHook
+mainTemplate.hooks.hash SyncHook
+mainTemplate.hooks.hashForChunk SyncHook
+mainTemplate.hooks.bootstrap SyncWaterfallHook
+mainTemplate.hooks.localVars SyncWaterfallHook
+mainTemplate.hooks.moduleObj SyncWaterfallHook
+mainTemplate.hooks.moduleRequire SyncWaterfallHook
+mainTemplate.hooks.require SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.requireExtensions SyncWaterfallHook
+mainTemplate.hooks.beforeStartup SyncWaterfallHook
+mainTemplate.hooks.afterStartup SyncWaterfallHook
+mainTemplate.hooks.moduleRequire SyncWaterfallHook
+mainTemplate.hooks.startup SyncWaterfallHook
+mainTemplate.hooks.hash SyncHook
+mainTemplate.hooks.hashForChunk SyncHook
+mainTemplate.hooks.bootstrap SyncWaterfallHook
+mainTemplate.hooks.localVars SyncWaterfallHook
+mainTemplate.hooks.moduleObj SyncWaterfallHook
+mainTemplate.hooks.moduleRequire SyncWaterfallHook
+mainTemplate.hooks.require SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.requireExtensions SyncWaterfallHook
+mainTemplate.hooks.beforeStartup SyncWaterfallHook
+mainTemplate.hooks.afterStartup SyncWaterfallHook
+mainTemplate.hooks.moduleRequire SyncWaterfallHook
+mainTemplate.hooks.startup SyncWaterfallHook
+mainTemplate.hooks.renderManifest SyncWaterfallHook
+mainTemplate.hooks.globalHashPaths SyncWaterfallHook
+mainTemplate.hooks.globalHash SyncBailHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.bootstrap SyncWaterfallHook
+mainTemplate.hooks.localVars SyncWaterfallHook
+mainTemplate.hooks.moduleObj SyncWaterfallHook
+mainTemplate.hooks.moduleRequire SyncWaterfallHook
+mainTemplate.hooks.require SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.requireExtensions SyncWaterfallHook
+mainTemplate.hooks.beforeStartup SyncWaterfallHook
+mainTemplate.hooks.afterStartup SyncWaterfallHook
+mainTemplate.hooks.moduleRequire SyncWaterfallHook
+mainTemplate.hooks.startup SyncWaterfallHook
+mainTemplate.hooks.modules SyncWaterfallHook
+mainTemplate.hooks.render SyncWaterfallHook
+mainTemplate.hooks.renderWithEntry SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook

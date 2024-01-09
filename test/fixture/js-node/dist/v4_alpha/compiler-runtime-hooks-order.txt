@@ -1,14 +1,19 @@
-compiler.hooks.environment
-compiler.hooks.afterEnvironment
-compiler.hooks.entryOption
-compiler.hooks.afterPlugins
-compiler.hooks.afterResolvers
-compiler.hooks.beforeRun
-compiler.hooks.run
-compiler.hooks.normalModuleFactory
-compiler.hooks.contextModuleFactory
-compiler.hooks.beforeCompile
-compiler.hooks.compile
-compiler.hooks.thisCompilation
-compiler.hooks.compilation
-compiler.hooks.make
+compiler.hooks.environment SyncHook
+compiler.hooks.afterEnvironment SyncHook
+compiler.hooks.entryOption SyncBailHook
+compiler.hooks.afterPlugins SyncHook
+compiler.hooks.afterResolvers SyncHook
+compiler.hooks.beforeRun AsyncSeriesHook
+compiler.hooks.run AsyncSeriesHook
+compiler.hooks.normalModuleFactory SyncHook
+compiler.hooks.contextModuleFactory SyncHook
+compiler.hooks.beforeCompile AsyncSeriesHook
+compiler.hooks.compile SyncHook
+compiler.hooks.thisCompilation SyncHook
+compiler.hooks.compilation SyncHook
+compiler.hooks.make AsyncParallelHook
+compiler.hooks.afterCompile AsyncSeriesHook
+compiler.hooks.shouldEmit SyncBailHook
+compiler.hooks.emit AsyncSeriesHook
+compiler.hooks.afterEmit AsyncSeriesHook
+compiler.hooks.done SyncHook
