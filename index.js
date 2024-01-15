@@ -45,6 +45,7 @@ class LogRuntimeHooksOrderPlugin {
       verbose: true,
       filename: DEFAULT_ASSET_NAME,
       silent: false,
+      stats: true,
       ...userConfig,
     };
     this.logger = new Logger(userConfig.silent);
@@ -236,6 +237,20 @@ class LogRuntimeHooksOrderPlugin {
     });
   }
 
+  tapForStats(compiler) {
+    if (!this.config.stats) {
+      return;
+    }
+    compiler.hooks.done.tap(PLUGIN_NAME, (stats) => {
+      if (stats && stats.toJson) {
+        let json = stats.toJson();
+        let str = JSON.stringify(json, null, 2);
+        const file = path.resolve(compiler.outputPath, "stats.json");
+        fs.writeFileSync(file, str, "utf8");
+      }
+    });
+  }
+
   apply(compiler) {
     this.applyCompilerHooks(compiler);
     this.applyCompilationHooks(compiler);
@@ -243,6 +258,7 @@ class LogRuntimeHooksOrderPlugin {
     this.applyParserHooks(compiler);
     this.applyTemplateHooks(compiler);
     this.tapForAssets(compiler);
+    this.tapForStats(compiler);
   }
 }
 

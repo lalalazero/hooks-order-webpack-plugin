@@ -1,0 +1,260 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.47.0",
+  "hash": "61b1071940ee056931aa",
+  "time": 64,
+  "builtAt": 1705306196417,
+  "publicPath": "",
+  "outputPath": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\dist\\v4",
+  "assetsByChunkName": {
+    "main": "main.js"
+  },
+  "assets": [
+    {
+      "name": "main.js",
+      "size": 4122,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "main.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "main.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": "main",
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 123,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "main.js"
+      ],
+      "hash": "bdddcca9a9d1194b37d2",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": "./bar.js",
+          "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+          "name": "./bar.js",
+          "index": 1,
+          "index2": 0,
+          "size": 25,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "issuerId": "./index.js",
+          "issuerName": "./index.js",
+          "issuerPath": [
+            {
+              "id": "./index.js",
+              "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+              "name": "./index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./index.js",
+              "moduleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "type": "cjs require",
+              "userRequest": "./bar",
+              "loc": "1:12-28"
+            }
+          ],
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "module.exports = 'bar111'"
+        },
+        {
+          "id": "./index.js",
+          "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "name": "./index.js",
+          "index": 0,
+          "index2": 1,
+          "size": 98,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./index.js",
+              "loc": "main"
+            }
+          ],
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "const bar = require(\"./bar\")\r\n\r\nfunction hello() {\r\n    console.log('bar is ' + bar)\r\n}\r\n\r\nhello()"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "./index.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "./bar.js",
+      "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+      "name": "./bar.js",
+      "index": 1,
+      "index2": 0,
+      "size": 25,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+      "issuerId": "./index.js",
+      "issuerName": "./index.js",
+      "issuerPath": [
+        {
+          "id": "./index.js",
+          "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "name": "./index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./index.js",
+          "moduleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "type": "cjs require",
+          "userRequest": "./bar",
+          "loc": "1:12-28"
+        }
+      ],
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "module.exports = 'bar111'"
+    },
+    {
+      "id": "./index.js",
+      "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+      "name": "./index.js",
+      "index": 0,
+      "index2": 1,
+      "size": 98,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./index.js",
+          "loc": "main"
+        }
+      ],
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "const bar = require(\"./bar\")\r\n\r\nfunction hello() {\r\n    console.log('bar is ' + bar)\r\n}\r\n\r\nhello()"
+    }
+  ],
+  "filteredModules": 0,
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 2,
+      "debug": false
+    }
+  },
+  "children": []
+}

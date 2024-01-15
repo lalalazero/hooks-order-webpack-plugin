@@ -195,4 +195,13 @@ mainTemplate.hooks.assetPath SyncWaterfallHook
 compiler.hooks.assetEmitted AsyncSeriesHook
 compiler.hooks.afterEmit AsyncSeriesHook
 compilation.hooks.needAdditionalPass SyncBailHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
 compiler.hooks.done AsyncSeriesHook

@@ -1,0 +1,468 @@
+{
+  "hash": "330e0bf045e45a0de308",
+  "version": "5.89.0",
+  "time": 97,
+  "builtAt": 1705306196993,
+  "publicPath": "auto",
+  "outputPath": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\dist\\v5",
+  "assetsByChunkName": {
+    "main": [
+      "main.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "asset",
+      "name": "main.js",
+      "size": 1709,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "javascriptModule": false,
+        "size": 1709
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": {},
+      "chunks": [
+        "main"
+      ],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    }
+  ],
+  "chunks": [
+    {
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "recorded": false,
+      "size": 123,
+      "sizes": {
+        "javascript": 123,
+        "runtime": 0
+      },
+      "names": [
+        "main"
+      ],
+      "idHints": [],
+      "runtime": [
+        "main"
+      ],
+      "files": [
+        "main.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "87b4acd2d86fef45c310",
+      "childrenByOrder": {},
+      "id": "main",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": null,
+          "size": 25,
+          "sizes": {
+            "javascript": 25
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+          "name": "./bar.js",
+          "nameForCondition": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+          "index": 1,
+          "preOrderIndex": 1,
+          "index2": 0,
+          "postOrderIndex": 0,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": true,
+          "issuer": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "issuerName": "./index.js",
+          "issuerPath": [
+            {
+              "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+              "name": "./index.js",
+              "id": "./index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "./bar.js",
+          "issuerId": "./index.js",
+          "chunks": [
+            "main"
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+              "module": "./bar.js",
+              "moduleName": "./bar.js",
+              "resolvedModuleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+              "resolvedModule": "./bar.js",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "1:0-14",
+              "moduleId": "./bar.js",
+              "resolvedModuleId": "./bar.js"
+            },
+            {
+              "moduleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+              "module": "./index.js",
+              "moduleName": "./index.js",
+              "resolvedModuleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+              "resolvedModule": "./index.js",
+              "type": "cjs require",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./bar",
+              "loc": "1:12-28",
+              "moduleId": "./index.js",
+              "resolvedModuleId": "./index.js"
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [
+            "CommonJS bailout: module.exports is used directly at 1:0-14"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": null,
+          "size": 98,
+          "sizes": {
+            "javascript": 98
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "name": "./index.js",
+          "nameForCondition": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 1,
+          "postOrderIndex": 1,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "./index.js",
+          "issuerId": null,
+          "chunks": [
+            "main"
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./index.js",
+              "loc": "main",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0
+        },
+        {
+          "type": "module",
+          "moduleType": "runtime",
+          "layer": null,
+          "size": 0,
+          "sizes": {
+            "runtime": 0
+          },
+          "built": false,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "webpack/runtime/compat",
+          "name": "webpack/runtime/compat",
+          "nameForCondition": null,
+          "index": null,
+          "preOrderIndex": null,
+          "index2": null,
+          "postOrderIndex": null,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "",
+          "chunks": [
+            "main"
+          ],
+          "assets": [],
+          "reasons": [],
+          "usedExports": null,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": null
+        }
+      ],
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "./index.js"
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "layer": null,
+      "size": 98,
+      "sizes": {
+        "javascript": 98
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+      "name": "./index.js",
+      "nameForCondition": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+      "index": 0,
+      "preOrderIndex": 0,
+      "index2": 1,
+      "postOrderIndex": 1,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "issuer": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "./index.js",
+      "issuerId": null,
+      "chunks": [
+        "main"
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "resolvedModuleIdentifier": null,
+          "resolvedModule": null,
+          "type": "entry",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./index.js",
+          "loc": "main",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": null,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/auto",
+      "layer": null,
+      "size": 25,
+      "sizes": {
+        "javascript": 25
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+      "name": "./bar.js",
+      "nameForCondition": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+      "index": 1,
+      "preOrderIndex": 1,
+      "index2": 0,
+      "postOrderIndex": 0,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "issuer": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+      "issuerName": "./index.js",
+      "issuerPath": [
+        {
+          "identifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "name": "./index.js",
+          "id": "./index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "./bar.js",
+      "issuerId": "./index.js",
+      "chunks": [
+        "main"
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+          "module": "./bar.js",
+          "moduleName": "./bar.js",
+          "resolvedModuleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\bar.js",
+          "resolvedModule": "./bar.js",
+          "type": "cjs self exports reference",
+          "active": true,
+          "explanation": "",
+          "userRequest": null,
+          "loc": "1:0-14",
+          "moduleId": "./bar.js",
+          "resolvedModuleId": "./bar.js"
+        },
+        {
+          "moduleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "module": "./index.js",
+          "moduleName": "./index.js",
+          "resolvedModuleIdentifier": "E:\\my-library\\log-runtime-hooks-webpack-plugin\\test\\fixture\\js-node\\index.js",
+          "resolvedModule": "./index.js",
+          "type": "cjs require",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./bar",
+          "loc": "1:12-28",
+          "moduleId": "./index.js",
+          "resolvedModuleId": "./index.js"
+        }
+      ],
+      "usedExports": null,
+      "providedExports": null,
+      "optimizationBailout": [
+        "CommonJS bailout: module.exports is used directly at 1:0-14"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "runtime",
+      "layer": null,
+      "size": 0,
+      "sizes": {
+        "runtime": 0
+      },
+      "built": false,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "webpack/runtime/compat",
+      "name": "webpack/runtime/compat",
+      "nameForCondition": null,
+      "index": null,
+      "preOrderIndex": null,
+      "index2": null,
+      "postOrderIndex": null,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": "",
+      "chunks": [
+        "main"
+      ],
+      "assets": [],
+      "reasons": [],
+      "usedExports": null,
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": null
+    }
+  ],
+  "entrypoints": {
+    "main": {
+      "name": "main",
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        {
+          "name": "main.js",
+          "size": 1709
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1709,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "name": "main",
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        {
+          "name": "main.js",
+          "size": 1709
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1709,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "errors": [],
+  "errorsCount": 0,
+  "warnings": [],
+  "warningsCount": 0,
+  "children": []
+}

@@ -17,3 +17,11 @@ mainTemplate.hooks.render SyncWaterfallHook
 mainTemplate.hooks.renderWithEntry SyncWaterfallHook
 mainTemplate.hooks.assetPath SyncWaterfallHook
 mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook
+mainTemplate.hooks.assetPath SyncWaterfallHook

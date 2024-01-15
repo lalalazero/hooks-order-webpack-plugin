@@ -3,5 +3,6 @@ module.exports = {
   entry: "./index.js",
   target: "web",
   devtool: false,
+  stats: 'verbose',
   plugins: []
 };
